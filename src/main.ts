@@ -224,7 +224,7 @@ export async function run() {
         if (!fs.existsSync(directory) || !fs.existsSync(path.join(directory, NINJA_FILE))) {
             core.info('Project isn\'t setup yet. Setting it up.');
 
-            let setupArgs: string[] = ['setup', directory];
+            let setupArgs: string[] = ['setup', directory, options];
             if (action == MesonAction.Coverage)
                 setupArgs = setupArgs.concat('-Db_coverage=true');
             if (setupOptions)
